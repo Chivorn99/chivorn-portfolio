@@ -4,7 +4,7 @@
 import { useState } from 'react'
 
 const skills = {
-    technical: ['Next.js', 'React.js', 'NestJS', 'Laravel', 'Flutter', 'JavaScript', 'PHP', 'Cloud Computing'],
+    technical: ['Next.js', 'React.js', 'NestJS', 'Laravel', 'Flutter', 'React Native',  'JavaScript', 'PHP', 'Cloud Computing', 'System Management', 'Networking Switching', 'Wireless Networking', 'Figma - Basic UI/UX'],
     professional: ['Leadership', 'Problem-Solving', 'Communication', 'Teamwork']
 };
 
