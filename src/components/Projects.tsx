@@ -11,13 +11,13 @@ const Projects = () => {
         {
             id: 'ecommerce-platform',
             title: 'E-Commerce Platform',
-            description: 'Full-stack e-commerce solution with Next.js, NestJS, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.',
-            image: '/images/projects/ecommerce.png', // Add your project screenshots
+            description: 'Full-stack e-commerce solution with Next.js, NestJS, and PostgreSQL.',
+            image: '/images/g1_pic.png', // Use existing image as placeholder
             techStack: ['Next.js', 'NestJS', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
-            githubUrl: 'https://github.com/vG1v/ecommerce-platform',
-            liveUrl: 'https://your-ecommerce-demo.vercel.app',
+            githubUrl: 'https://github.com/vG1v',
+            liveUrl: null, // Remove broken demo links
             featured: true,
-            status: 'Completed'
+            status: 'In Progress'
         },
         {
             id: 'task-management',
