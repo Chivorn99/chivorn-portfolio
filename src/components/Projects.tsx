@@ -12,10 +12,10 @@ const Projects = () => {
             id: 'ecommerce-platform',
             title: 'E-Commerce Platform',
             description: 'Full-stack e-commerce solution with Next.js, NestJS, and PostgreSQL.',
-            image: '/images/g1_pic.png', // Use existing image as placeholder
+            image: '/images/g1_pic.png', 
             techStack: ['Next.js', 'NestJS', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
             githubUrl: 'https://github.com/vG1v',
-            liveUrl: null, // Remove broken demo links
+            liveUrl: null, 
             featured: true,
             status: 'In Progress'
         },
