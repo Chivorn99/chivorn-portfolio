@@ -4,7 +4,7 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Services from '@/components/Services';
 import Skills from '@/components/Skills';
-import Projects from '@/components/Projects';
+// import Projects from '@/components/Projects';
 import Journey from '@/components/Journey';
 import Footer from '@/components/Footer';
 import AnimatedBackground from '@/components/AnimatedBackground';
