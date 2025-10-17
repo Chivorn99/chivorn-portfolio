@@ -1,6 +1,7 @@
 'use client'
 
 import { FaGithub, FaLinkedin, FaFacebook, FaEnvelope, FaHeart } from 'react-icons/fa'
+import { FaTelegram } from 'react-icons/fa6';
 
 const Footer = () => {
     return (
@@ -44,6 +45,7 @@ const Footer = () => {
                                 { icon: <FaGithub />, href: 'https://github.com/vG1v', label: 'GitHub' },
                                 { icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/norakchivorn-nhoung-159b74204', label: 'LinkedIn' },
                                 { icon: <FaFacebook />, href: 'https://www.facebook.com/ah.chivornkh?mibextid=PtKPJ9', label: 'Facebook' },
+                                { icon: <FaTelegram />, href: 'https://t.me/Chi111111', label: 'Telegram' },
                                 { icon: <FaEnvelope />, href: 'mailto:nhoungnchivorn99@gmail.com', label: 'Email' }
                             ].map((social, index) => (
                                 <a 
@@ -69,12 +71,10 @@ const Footer = () => {
                 <div className="border-t border-theme-secondary/20 pt-6 opacity-0 animate-fade-in-up delay-600">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         
-                        {/* Copyright */}
                         <p className="text-theme-secondary text-sm">
                             © {new Date().getFullYear()} Norakchivorn Nhoung. All Rights Reserved.
                         </p>
 
-                        {/* Made with love */}
                         <p className="text-theme-secondary text-sm flex items-center gap-2">
                             Made with 
                             <FaHeart className="text-red-500 animate-pulse" /> 

@@ -191,10 +191,17 @@ const Hero = () => {
                         {/* Instructions */}
                         <div className="text-center">
                             <p className="text-theme-secondary text-sm mb-3">
-                                Open Telegram and scan this QR code to start chatting!
+                                Open Telegram and scan this QR code to start chatting or click on the link below!
                             </p>
                             <p className="text-accent text-xs font-medium">
-                                @Chi111111
+                                <a 
+                                    href="https://t.me/Chi111111" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="hover:underline transition-all duration-300 hover:scale-105 inline-block"
+                                >
+                                    @Chi111111
+                                </a>
                             </p>
                         </div>
                     </div>

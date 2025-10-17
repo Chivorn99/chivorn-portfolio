@@ -4,7 +4,7 @@
 import { useState } from 'react'
 
 const About = () => {
-    const skills = ['Next.js', 'React.js', 'Laravel', 'NestJS', 'Flutter', 'Cloud Computing'];
+    const skills = ['Next.js', 'React.js', 'Laravel', 'NestJS', 'Flutter', 'Cloud Computing', 'Networking'];
     const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
     return (
