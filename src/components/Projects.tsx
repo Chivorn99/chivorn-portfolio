@@ -12,15 +12,15 @@ const Projects = () => {
 
     const projects = [
         {
-            id: 'ecommerce-platform',
-            title: 'E-Commerce Platform',
+            id: 'crime-mapping-tool',
+            title: 'Crime Mapping Tool',
             description: 'Full-stack e-commerce solution with Next.js, NestJS, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.',
-            image: '/images/g1_pic.png', 
-            techStack: ['Next.js', 'NestJS', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
-            githubUrl: 'https://github.com/vG1v',
+            image: '/images/crime-homepage.png', 
+            techStack: ['Laravel', 'NestJS', 'MySQL', 'Tailwind CSS'],
+            githubUrl: 'https://github.com/Chivorn99/crime-mappingtool-project.git',
             liveUrl: null, 
             featured: true,
-            status: 'In Progress'
+            status: 'Completed'
         },
         {
             id: 'task-management',
