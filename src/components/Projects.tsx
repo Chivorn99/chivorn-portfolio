@@ -23,38 +23,38 @@ const Projects = () => {
             status: 'Completed'
         },
         {
-            id: 'task-management',
-            title: 'Task Management App',
-            description: 'Collaborative task management application built with React Native and Laravel. Real-time updates, team collaboration, and progress tracking.',
-            image: '/images/g1_pic.png',
-            techStack: ['React Native', 'Laravel', 'MySQL', 'Socket.io', 'Redux'],
-            githubUrl: 'https://github.com/vG1v',
+            id: 'clinex-application',
+            title: 'Clinex Application',
+            description: 'A full-stack web application designed to automate data extraction from medical reports for lab technicians. It leverages Google\'s Document AI to process bulk PDF uploads, significantly increasing workflow efficiency and reducing manual errors.',
+            image: '/images/clinex-homepage.png',
+            techStack: ['Next JS', 'Laravel', 'MySQL', 'Google Document AI', 'Redis', 'Tailwind CSS', 'Laravel Reverb'],
+            githubUrl: 'https://github.com/Chivorn99/Clinex-Application-.git',
             liveUrl: null,
             featured: true,
             status: 'In Progress'
         },
-        {
-            id: 'portfolio-website',
-            title: 'Personal Portfolio',
-            description: 'Modern, responsive portfolio website with dark/light mode, animations, and interactive elements. Built with Next.js and TypeScript.',
-            image: '/images/g1_pic.png',
-            techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-            githubUrl: 'https://github.com/vG1v',
-            liveUrl: null,
-            featured: false,
-            status: 'Completed'
-        },
-        {
-            id: 'chat-application',
-            title: 'Real-time Chat App',
-            description: 'Modern chat application with real-time messaging, file sharing, and group chats. Built with Flutter and Firebase.',
-            image: '/images/g1_pic.png',
-            techStack: ['Flutter', 'Firebase', 'WebRTC', 'Cloud Functions'],
-            githubUrl: 'https://github.com/vG1v',
-            liveUrl: null,
-            featured: false,
-            status: 'Completed'
-        }
+        // {
+        //     id: 'portfolio-website',
+        //     title: 'Personal Portfolio',
+        //     description: 'Modern, responsive portfolio website with dark/light mode, animations, and interactive elements. Built with Next.js and TypeScript.',
+        //     image: '/images/g1_pic.png',
+        //     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+        //     githubUrl: 'https://github.com/vG1v',
+        //     liveUrl: null,
+        //     featured: false,
+        //     status: 'Completed'
+        // },
+        // {
+        //     id: 'chat-application',
+        //     title: 'Real-time Chat App',
+        //     description: 'Modern chat application with real-time messaging, file sharing, and group chats. Built with Flutter and Firebase.',
+        //     image: '/images/g1_pic.png',
+        //     techStack: ['Flutter', 'Firebase', 'WebRTC', 'Cloud Functions'],
+        //     githubUrl: 'https://github.com/vG1v',
+        //     liveUrl: null,
+        //     featured: false,
+        //     status: 'Completed'
+        // }
     ]
 
     // Auto-play functionality
