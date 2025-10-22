@@ -10,6 +10,13 @@ const Hero = () => {
     const [currentText, setCurrentText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
+    
+    // Quote animation states
+    const [currentQuoteText, setCurrentQuoteText] = useState('');
+    const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+    const [isQuoteDeleting, setIsQuoteDeleting] = useState(false);
+    const [currentFont, setCurrentFont] = useState(0);
+    const [currentAnimation, setCurrentAnimation] = useState(0);
 
     const greetings = [
         "Hello I'm",
@@ -20,6 +27,46 @@ const Hero = () => {
         "Bonjour, je suis",
     ];
 
+    const quotes = [
+        "Code is poetry written in logic",
+        "Every bug is a lesson in disguise",
+        "Dream big, code bigger",
+        "Turning coffee into code since 2023",
+        "Building the future, one line at a time",
+        "Innovation through dedication",
+        "Making impossible possible with code",
+        "Crafting digital experiences that matter",
+        "Passion drives perfection",
+        "Code with purpose, build with passion"
+    ];
+
+    const fonts = [
+        'font-mono text-green-400',
+        'font-serif text-purple-400 italic',
+        'font-sans text-blue-400 font-bold',
+        'text-yellow-400 font-extrabold tracking-wider',
+        'text-pink-400 font-light italic',
+        'text-cyan-400 font-semibold',
+        'text-orange-400 font-bold tracking-wide',
+        'text-red-400 font-medium italic',
+        'text-indigo-400 font-black',
+        'text-emerald-400 font-thin tracking-widest'
+    ];
+
+    const animations = [
+        'animate-bounce',
+        'animate-pulse',
+        'animate-ping opacity-75',
+        'hover:animate-spin transition-transform',
+        'animate-wiggle',
+        'animate-glow',
+        'animate-typewriter',
+        'animate-fade-slide-up',
+        'animate-zoom-in',
+        'animate-rainbow-text'
+    ];
+
+    // Greeting animation
     useEffect(() => {
         const timeout = setTimeout(() => {
             const current = greetings[currentIndex];
@@ -42,6 +89,33 @@ const Hero = () => {
 
         return () => clearTimeout(timeout);
     }, [currentText, currentIndex, isDeleting, greetings]);
+
+    // Quote animation with random font and animation
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            const currentQuote = quotes[currentQuoteIndex];
+
+            if (!isQuoteDeleting) {
+                if (currentQuoteText.length < currentQuote.length) {
+                    setCurrentQuoteText(currentQuote.substring(0, currentQuoteText.length + 1));
+                } else {
+                    setTimeout(() => setIsQuoteDeleting(true), 3000);
+                }
+            } else {
+                if (currentQuoteText.length > 0) {
+                    setCurrentQuoteText(currentQuote.substring(0, currentQuoteText.length - 1));
+                } else {
+                    setIsQuoteDeleting(false);
+                    setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+                    // Randomize font and animation for next quote
+                    setCurrentFont(Math.floor(Math.random() * fonts.length));
+                    setCurrentAnimation(Math.floor(Math.random() * animations.length));
+                }
+            }
+        }, isQuoteDeleting ? 30 : 80);
+
+        return () => clearTimeout(timeout);
+    }, [currentQuoteText, currentQuoteIndex, isQuoteDeleting, quotes, fonts.length, animations.length]);
 
     return (
         <>
@@ -126,9 +200,9 @@ const Hero = () => {
                             </div>
                         </div>
 
-                        {/* Right Side: Image */}
-                        <div className="md:w-1/2 flex justify-center md:justify-end opacity-0 animate-slide-in-right delay-500">
-                            <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-accent shadow-2xl hover-lift animate-float">
+                        {/* Right Side: Image & Quote */}
+                        <div className="md:w-1/2 flex flex-col items-center md:items-end opacity-0 animate-slide-in-right delay-500">
+                            <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-accent shadow-2xl hover-lift animate-float mb-8">
                                 <Image
                                     src="/images/g1_new.jpg"
                                     alt="Norakchivorn Nhoung"
@@ -137,6 +211,43 @@ const Hero = () => {
                                     className="object-cover w-full h-full transition-transform duration-500 hover:scale-110"
                                     priority={true}
                                 />
+                            </div>
+
+                            {/* Animated Quote */}
+                            <div className="text-center md:text-right max-w-sm opacity-0 animate-fade-in-up delay-700">
+                                <div className="relative">
+                                    {/* Quote marks */}
+                                    <span className="absolute -top-2 -left-2 text-4xl text-accent/30 font-serif">"</span>
+                                    <span className="absolute -bottom-4 -right-2 text-4xl text-accent/30 font-serif">"</span>
+                                    
+                                    {/* Quote text with dynamic styling */}
+                                    <p className={`
+                                        text-lg md:text-xl leading-relaxed px-4 py-2 min-h-[3rem] flex items-center justify-center
+                                        ${fonts[currentFont]} ${animations[currentAnimation]}
+                                        transition-all duration-500 transform-gpu
+                                    `}>
+                                        <span className="inline-block">
+                                            {currentQuoteText}
+                                            <span className="animate-pulse ml-1 text-accent">|</span>
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                                {/* Quote indicator dots */}
+                                <div className="flex justify-center md:justify-end gap-1 mt-4">
+                                    {quotes.map((_, index) => (
+                                        <div
+                                            key={index}
+                                            className={`
+                                                w-2 h-2 rounded-full transition-all duration-300
+                                                ${index === currentQuoteIndex 
+                                                    ? 'bg-accent animate-pulse' 
+                                                    : 'bg-theme-secondary/30'
+                                                }
+                                            `}
+                                        />
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -207,6 +318,51 @@ const Hero = () => {
                     </div>
                 </div>
             )}
+
+            {/* Custom CSS for additional animations */}
+            <style jsx>{`
+                @keyframes wiggle {
+                    0%, 7% { transform: rotateZ(0); }
+                    15% { transform: rotateZ(-15deg); }
+                    20% { transform: rotateZ(10deg); }
+                    25% { transform: rotateZ(-10deg); }
+                    30% { transform: rotateZ(6deg); }
+                    35% { transform: rotateZ(-4deg); }
+                    40%, 100% { transform: rotateZ(0); }
+                }
+                
+                @keyframes glow {
+                    0%, 100% { text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor; }
+                    50% { text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor; }
+                }
+                
+                @keyframes rainbow-text {
+                    0% { color: #ff0000; }
+                    16% { color: #ff8000; }
+                    32% { color: #ffff00; }
+                    48% { color: #00ff00; }
+                    64% { color: #0080ff; }
+                    80% { color: #8000ff; }
+                    100% { color: #ff0000; }
+                }
+                
+                @keyframes fade-slide-up {
+                    0% { opacity: 0; transform: translateY(20px); }
+                    100% { opacity: 1; transform: translateY(0); }
+                }
+                
+                @keyframes zoom-in {
+                    0% { transform: scale(0.8); }
+                    50% { transform: scale(1.05); }
+                    100% { transform: scale(1); }
+                }
+                
+                .animate-wiggle { animation: wiggle 2s ease-in-out infinite; }
+                .animate-glow { animation: glow 2s ease-in-out infinite; }
+                .animate-rainbow-text { animation: rainbow-text 3s linear infinite; }
+                .animate-fade-slide-up { animation: fade-slide-up 1s ease-out; }
+                .animate-zoom-in { animation: zoom-in 1s ease-out; }
+            `}</style>
         </>
     );
 };
