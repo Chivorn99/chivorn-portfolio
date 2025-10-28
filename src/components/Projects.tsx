@@ -16,7 +16,7 @@ const Projects = () => {
             title: 'Crime Mapping Tool',
             description: 'Full-stack e-commerce solution with Next.js, NestJS, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.',
             image: '/images/crime-homepage.png', 
-            techStack: ['Laravel', 'NestJS', 'MySQL', 'Tailwind CSS'],
+            techStack: ['Laravel', 'NestJS', 'MySQL', 'Tailwind CSS', 'Leaflet JS'],
             githubUrl: 'https://github.com/Chivorn99/crime-mappingtool-project.git',
             liveUrl: null, 
             featured: true,
