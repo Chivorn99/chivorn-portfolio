@@ -24,7 +24,7 @@ const Footer = () => {
                     <div className="text-center opacity-0 animate-fade-in-up delay-200">
                         <h4 className="text-lg font-semibold text-theme-primary mb-4">Quick Links</h4>
                         <nav className="flex flex-col space-y-2">
-                            {['About', 'Services', 'Skills', 'Journey'].map((link, index) => (
+                            {['About', 'Services', 'Skills', 'Projects', 'Journey'].map((link, index) => (
                                 <a 
                                     key={link}
                                     href={`#${link.toLowerCase()}`}
@@ -75,11 +75,11 @@ const Footer = () => {
                             © {new Date().getFullYear()} Norakchivorn Nhoung. All Rights Reserved.
                         </p>
 
-                        <p className="text-theme-secondary text-sm flex items-center gap-2">
+                        {/* <p className="text-theme-secondary text-sm flex items-center gap-2">
                             Made with 
                             <FaHeart className="text-red-500 animate-pulse" /> 
                             in Cambodia
-                        </p>
+                        </p> */}
                     </div>
                 </div>
 

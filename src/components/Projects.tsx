@@ -289,7 +289,7 @@ const Projects = () => {
                 </div>
 
                 {/* GitHub Profile Link */}
-                <div className="text-center mt-12 opacity-0 animate-fade-in-up delay-500">
+                {/* <div className="text-center mt-12 opacity-0 animate-fade-in-up delay-500">
                     <a
                         href="https://github.com/vG1v"
                         target="_blank"
@@ -300,7 +300,7 @@ const Projects = () => {
                         View All Projects on GitHub
                         <FaExternalLinkAlt className="w-4 h-4" />
                     </a>
-                </div>
+                </div> */}
             </div>
 
             <style jsx>{`
