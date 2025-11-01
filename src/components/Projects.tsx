@@ -74,9 +74,7 @@ const Projects = () => {
 
     const goToSlide = (index: number) => {
         setCurrentIndex(index)
-        setIsAutoPlaying(false) // Pause auto-play when manually navigating
-        
-        // Resume auto-play after 8 seconds of inactivity
+        setIsAutoPlaying(false)
         setTimeout(() => setIsAutoPlaying(true), 8000)
     }
 
@@ -247,8 +245,6 @@ const Projects = () => {
 
                     {/* Carousel Controls */}
                     <div className="flex items-center justify-center gap-6 mt-8">
-                        
-                        {/* Dots Indicator */}
                         <div className="flex gap-2">
                             {projects.map((_, index) => (
                                 <button

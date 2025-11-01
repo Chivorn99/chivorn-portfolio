@@ -1,4 +1,3 @@
-// src/components/Skills.tsx
 'use client'
 
 import { useState } from 'react'

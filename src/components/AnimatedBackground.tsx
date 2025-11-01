@@ -16,7 +16,6 @@ export default function AnimatedBackground() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    // Generate particles only on the client side
     const generatedParticles = [...Array(20)].map((_, i) => ({
       id: i,
       left: Math.random() * 100,
@@ -37,12 +36,9 @@ export default function AnimatedBackground() {
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
-
-  // Don't render particles until component is mounted on client
   if (!mounted) {
     return (
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        {/* Mouse follower only */}
         <div
           className="absolute w-96 h-96 bg-accent rounded-full opacity-5 blur-3xl transition-all duration-1000 ease-out"
           style={{
@@ -56,7 +52,6 @@ export default function AnimatedBackground() {
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-      {/* Floating particles */}
       <div className="absolute inset-0">
         {particles.map((particle) => (
           <div
@@ -72,7 +67,6 @@ export default function AnimatedBackground() {
         ))}
       </div>
 
-      {/* Mouse follower */}
       <div
         className="absolute w-96 h-96 bg-accent rounded-full opacity-5 blur-3xl transition-all duration-1000 ease-out"
         style={{

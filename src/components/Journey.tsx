@@ -166,15 +166,12 @@ const Journey = () => {
             {/* Certificate Modal */}
             {selectedCertificate && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-                    {/* Backdrop */}
                     <div
                         className="absolute inset-0 bg-black bg-opacity-75 backdrop-blur-sm"
                         onClick={() => setSelectedCertificate(null)}
                     />
 
-                    {/* Modal Content */}
                     <div className="relative bg-theme-secondary rounded-2xl p-4 max-w-4xl w-full shadow-2xl border border-accent/20 animate-fade-in-up">
-                        {/* Close Button */}
                         <button
                             onClick={() => setSelectedCertificate(null)}
                             className="absolute top-4 right-4 z-10 bg-theme-primary/80 hover:bg-theme-primary text-theme-secondary hover:accent-color p-2 rounded-full transition-all duration-300 hover:scale-110 backdrop-blur-sm"
