@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
