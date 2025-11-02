@@ -9,12 +9,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // Add basePath if your domain serves from a subdirectory
-  // Remove or comment out if serving from root
-  // basePath: '',
-
-  // Ensure assets are loaded with correct paths
-  assetPrefix: undefined,
+  basePath: '',
+  assetPrefix: 'https://chivornk.tech',
 };
 
 export default nextConfig;
