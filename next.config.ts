@@ -2,8 +2,6 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
   output: "export",
@@ -11,6 +9,12 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  // Add basePath if your domain serves from a subdirectory
+  // Remove or comment out if serving from root
+  // basePath: '',
+
+  // Ensure assets are loaded with correct paths
+  assetPrefix: undefined,
 };
 
 export default nextConfig;
