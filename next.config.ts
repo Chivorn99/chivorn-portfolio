@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: 'https://chivornk.tech',
+  // assetPrefix: 'https://chivornk.tech',
 };
 
 export default nextConfig;
