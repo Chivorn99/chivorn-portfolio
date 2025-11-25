@@ -33,6 +33,17 @@ const Projects = () => {
             featured: true,
             status: 'In Progress'
         },
+        {
+            id: 'ecommerce-application',
+            title: 'E-commerce Application',
+            description: 'A full-stack e-commerce solution with React.js, Laravel, and MySQL. Features include user authentication, payment processing, and admin dashboard.',
+            image: '/images/ecommerce-app.png',
+            techStack: ['React JS', 'React Native', 'Laravel', 'MySQL', 'Google Auth', 'Tailwind CSS', 'Laravel Reverb'],
+            githubUrl: '#',
+            liveUrl: null,
+            featured: true,
+            status: 'In Progress'
+        },
         // {
         //     id: 'portfolio-website',
         //     title: 'Personal Portfolio',
