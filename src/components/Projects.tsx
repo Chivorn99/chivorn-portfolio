@@ -28,7 +28,7 @@ const Projects = () => {
             description: 'A full-stack web application designed to automate data extraction from medical reports for lab technicians. It leverages Google\'s Document AI to process bulk PDF uploads, significantly increasing workflow efficiency and reducing manual errors.',
             image: '/images/clinex-homepage.png',
             techStack: ['Next JS', 'Laravel', 'MySQL', 'Google Document AI', 'Redis', 'Tailwind CSS', 'Laravel Reverb'],
-            githubUrl: 'https://github.com/Chivorn99/Clinex-Application-.git',
+            githubUrl: 'https://github.com/Chivorn99/clinex-fyp-full-application.git',
             liveUrl: null,
             featured: true,
             status: 'In Progress'
