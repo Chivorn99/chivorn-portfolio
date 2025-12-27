@@ -4,6 +4,18 @@ import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { FaGithub, FaExternalLinkAlt, FaStar, FaChevronLeft, FaChevronRight, FaPause, FaPlay } from 'react-icons/fa'
 
+interface Project {
+    id: string
+    title: string
+    description: string
+    image: string
+    techStack: string[]
+    githubUrl: string
+    liveUrl: string | null
+    featured: boolean
+    status: string
+}
+
 const Projects = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [isAutoPlaying, setIsAutoPlaying] = useState(true)
@@ -103,7 +115,7 @@ const Projects = () => {
         setIsAutoPlaying(!isAutoPlaying)
     }
 
-    const ProjectCard = ({ project, isActive }: { project: any, isActive: boolean }) => {
+    const ProjectCard = ({ project, isActive }: { project: Project, isActive: boolean }) => {
         const isHovered = hoveredProject === project.id
 
         return (
@@ -212,7 +224,7 @@ const Projects = () => {
                         My Projects
                     </h2>
                     <p className="text-theme-secondary max-w-2xl mx-auto opacity-0 animate-fade-in-up delay-200">
-                        Here are some of the projects I've worked on. Each one represents a learning journey 
+                        Here are some of the projects I&apos;ve worked on. Each one represents a learning journey 
                         and showcases different aspects of my development skills.
                     </p>
                 </div>
