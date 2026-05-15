@@ -2,83 +2,15 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import { FaGithub, FaExternalLinkAlt, FaStar, FaChevronLeft, FaChevronRight, FaPause, FaPlay } from 'react-icons/fa'
-
-interface Project {
-    id: string
-    title: string
-    description: string
-    image: string
-    techStack: string[]
-    githubUrl: string
-    liveUrl: string | null
-    featured: boolean
-    status: string
-}
+import Link from 'next/link'
+import { FaExternalLinkAlt, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { projects, type Project } from '@/data/projects'
 
 const Projects = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [isAutoPlaying, setIsAutoPlaying] = useState(true)
     const [hoveredProject, setHoveredProject] = useState<string | null>(null)
     const intervalRef = useRef<NodeJS.Timeout | null>(null)
-
-    const projects = [
-        {
-            id: 'crime-mapping-tool',
-            title: 'Crime Mapping Tool',
-            description: 'Full-stack e-commerce solution with Next.js, NestJS, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.',
-            image: '/images/crime-homepage.png', 
-            techStack: ['Laravel', 'NestJS', 'MySQL', 'Tailwind CSS', 'Leaflet JS'],
-            githubUrl: 'https://github.com/Chivorn99/crime-mappingtool-project.git',
-            liveUrl: null, 
-            featured: true,
-            status: 'Completed'
-        },
-        {
-            id: 'clinex-application',
-            title: 'Clinex Application',
-            description: 'A full-stack web application designed to automate data extraction from medical reports for lab technicians. It leverages Google\'s Document AI to process bulk PDF uploads, significantly increasing workflow efficiency and reducing manual errors.',
-            image: '/images/clinex-homepage.png',
-            techStack: ['Next JS', 'Laravel', 'MySQL', 'Google Document AI', 'Redis', 'Tailwind CSS', 'Laravel Reverb'],
-            githubUrl: 'https://github.com/Chivorn99/clinex-fyp-full-application.git',
-            liveUrl: null,
-            featured: true,
-            status: 'In Progress'
-        },
-        {
-            id: 'ecommerce-application',
-            title: 'E-commerce Application',
-            description: 'A full-stack e-commerce solution with React.js, Laravel, and MySQL. Features include user authentication, payment processing, and admin dashboard.',
-            image: '/images/ecommerce-app.png',
-            techStack: ['React JS', 'React Native', 'Laravel', 'MySQL', 'Google Auth', 'Tailwind CSS', 'Laravel Reverb'],
-            githubUrl: '#',
-            liveUrl: null,
-            featured: true,
-            status: 'In Progress'
-        },
-        // {
-        //     id: 'portfolio-website',
-        //     title: 'Personal Portfolio',
-        //     description: 'Modern, responsive portfolio website with dark/light mode, animations, and interactive elements. Built with Next.js and TypeScript.',
-        //     image: '/images/g1_pic.png',
-        //     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-        //     githubUrl: 'https://github.com/vG1v',
-        //     liveUrl: null,
-        //     featured: false,
-        //     status: 'Completed'
-        // },
-        // {
-        //     id: 'chat-application',
-        //     title: 'Real-time Chat App',
-        //     description: 'Modern chat application with real-time messaging, file sharing, and group chats. Built with Flutter and Firebase.',
-        //     image: '/images/g1_pic.png',
-        //     techStack: ['Flutter', 'Firebase', 'WebRTC', 'Cloud Functions'],
-        //     githubUrl: 'https://github.com/vG1v',
-        //     liveUrl: null,
-        //     featured: false,
-        //     status: 'Completed'
-        // }
-    ]
 
     // Auto-play functionality
     useEffect(() => {
@@ -189,15 +121,13 @@ const Projects = () => {
 
                         {/* Action Buttons */}
                         <div className="flex gap-3">
-                            <a
-                                href={project.githubUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <Link
+                                href={`/projects/${project.id}`}
                                 className="flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent-hover transition-colors duration-300 font-medium"
                             >
-                                <FaGithub className="w-4 h-4" />
-                                View Code
-                            </a>
+                                <FaExternalLinkAlt className="w-4 h-4" />
+                                Read Case Study
+                            </Link>
                             {project.liveUrl && (
                                 <a
                                     href={project.liveUrl}

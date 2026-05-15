@@ -27,7 +27,7 @@ const Footer = () => {
                             {['About', 'Services', 'Skills', 'Projects', 'Journey'].map((link, index) => (
                                 <a 
                                     key={link}
-                                    href={`#${link.toLowerCase()}`}
+                                    href={`/#${link.toLowerCase()}`}
                                     className="text-theme-secondary hover:accent-color transition-colors duration-300 hover:scale-105 inline-block"
                                     style={{ animationDelay: `${0.3 + index * 0.1}s` }}
                                 >
